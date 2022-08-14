@@ -1,17 +1,25 @@
 import "./App.css";
 import Button from "./components/Button";
 import Input from "./components/Input";
+import * as math from "mathjs";
 
 import { useState } from "react";
+import { evaluate } from "mathjs";
 
 const App = () => {
 
-  const [text, setText] = useState("text")
-  const [result, setResult] = useState("result")
+  const [text, setText] = useState("")
+  const [result, setResult] = useState("")
 
   const addToText = (val) => {
     setText((text)=>[...text,val + " "])
   }
+
+const calculateResult = ()=> {
+  const input = text.join("") // remove all commas
+
+  setResult(math.evaluate(input))
+}
 
   const resetInput = () => {
     setText("")
@@ -46,7 +54,7 @@ const App = () => {
         <div className="row">
         <Button symbol="0" handleClick={addToText}></Button>
         <Button symbol="." handleClick={addToText}></Button>
-        <Button symbol="="></Button>
+        <Button symbol="=" handleClick={calculateResult}></Button>
         <Button symbol="-" color="#eab676" handleClick={addToText}></Button>
         </div>
         <Button symbol="Clear" color="#1e81b0"  handleClick={resetInput}></Button>
