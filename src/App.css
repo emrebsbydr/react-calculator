@@ -17,3 +17,7 @@ body {
   color: black;
 }
 
+.row {
+  display: flex;
+}
+

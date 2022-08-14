@@ -2,9 +2,9 @@ import './Button.css'
 
 import React from 'react'
 
-const Button = () => {
+const Button = ({symbol,color}) => {
   return (
-    <div className='button-wrapper'>Button</div>
+    <div className='button-wrapper'style={{backgroundColor:color}}>{symbol}</div>
   )
 }
 

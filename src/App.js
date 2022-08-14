@@ -1,11 +1,45 @@
 import "./App.css";
 import Button from "./components/Button";
+import Input from "./components/Input";
+
+import { useState } from "react";
 
 const App = () => {
+
+  const [text, setText] = useState("text")
+  const [result, setResult] = useState("result")
+
   return (
     <div className="App">
       <div className="calc-wrapper">
-        <Button></Button>
+        <Input text={text} result={result}></Input>
+        <div className="row">
+        <Button symbol="7"></Button>
+        <Button symbol="8"></Button>
+        <Button symbol="9"></Button>
+        <Button symbol="/" color="#eab676"></Button>
+        </div>
+        <div className="row">
+        <Button symbol="4"></Button>
+        <Button symbol="5"></Button>
+        <Button symbol="6"></Button>
+        <Button symbol="*" color="#eab676"></Button>
+        </div>
+        <div className="row">
+        <Button symbol="1"></Button>
+        <Button symbol="2"></Button>
+        <Button symbol="3"></Button>
+        <Button symbol="+" color="#eab676"></Button>
+        </div>
+        <div className="row">
+        <Button symbol="0" ></Button>
+        <Button symbol="."></Button>
+        <Button symbol="="></Button>
+        <Button symbol="-" color="#eab676"></Button>
+        </div>
+        <Button symbol="Clear" color="#1e81b0"></Button>
+
+
       </div>
     </div>
   );
