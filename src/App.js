@@ -13,6 +13,12 @@ const App = () => {
     setText((text)=>[...text,val + " "])
   }
 
+  const resetInput = () => {
+    setText("")
+    setResult("")
+
+  }
+
 
 
   return (
@@ -23,13 +29,13 @@ const App = () => {
         <Button symbol="7" handleClick={addToText}></Button>
         <Button symbol="8" handleClick={addToText}></Button>
         <Button symbol="9" handleClick={addToText}></Button>
-        <Button symbol="/" color="#eab676"></Button>
+        <Button symbol="/" color="#eab676" handleClick={addToText}></Button>
         </div>
         <div className="row">
         <Button symbol="4" handleClick={addToText}></Button>
         <Button symbol="5" handleClick={addToText}></Button>
         <Button symbol="6" handleClick={addToText}></Button>
-        <Button symbol="*" color="#eab676"></Button>
+        <Button symbol="*" color="#eab676" handleClick={addToText}></Button>
         </div>
         <div className="row">
         <Button symbol="1" handleClick={addToText}></Button>
@@ -41,9 +47,9 @@ const App = () => {
         <Button symbol="0" handleClick={addToText}></Button>
         <Button symbol="." handleClick={addToText}></Button>
         <Button symbol="="></Button>
-        <Button symbol="-" color="#eab676"></Button>
+        <Button symbol="-" color="#eab676" handleClick={addToText}></Button>
         </div>
-        <Button symbol="Clear" color="#1e81b0" handleClick={addToText} ></Button>
+        <Button symbol="Clear" color="#1e81b0"  handleClick={resetInput}></Button>
 
 
       </div>
